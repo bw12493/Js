@@ -1,0 +1,54 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <p>Object is collection of key-value pair</p>
+    <p>
+      1 - Every JavaScript object has a Prototype property, Which makes
+      inheritance possible; It should be object and Not Primitative data should
+      be assigned to it
+    </p>
+    <p>
+      2 - when certain method or propery is called, search get start from object
+      itself, And if can not found, search moves in to the object Prototype,
+      procces continues untill method is found That is called as Prototype
+      Chain. Else Undefined
+    </p>
+    <p>
+      The Object constructor creates an object wrapper for the given value. If
+      the value is null or undefined , it will create and return an empty
+      object. Otherwise, it will return an object of a Type that corresponds to
+      the given value.
+    </p>
+    <script>
+      //object literal
+      /* let person = {
+        name: "sunny",
+        age: 28,
+        education: "mca",
+      };
+      for (const key in person) {
+        //for in method
+        console.log(person[key]);
+      } */
+
+      //Object constructor
+      function person(name, age, education, complextion) {
+        this.firstname = name;
+        this.age = age;
+        this.education = education;
+        this.complextion = complextion;
+      }
+      let person1 = new person("sunny", 28, "MCA", "fair");
+      let person2 = new person("munny", 28, "MCA", "dusky");
+      // console.log(person1.firstname);
+      for (const key in person2) {
+        console.log(person2[key]);
+      }
+    </script>
+  </body>
+</html>

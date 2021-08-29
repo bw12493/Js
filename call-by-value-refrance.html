@@ -1,0 +1,78 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call by value and reference</title>
+  </head>
+  <body>
+    <p>
+      <b>Call by value : </b>When a variable is passed as a parameter to a
+      function, if any changes are made to the parameter, the original variable
+      will remain unaffected. This is known as call by value and this is true
+      for all values having a primitive data type.
+        <dl>
+            <dt>Primitive data type</dt>
+            <dd>-Number</dd>
+            <dd>-String</dd>
+            <dd>-Boolean</dd>
+            <dd>-Undefined</dd>
+            <dd>-Null</dd>
+        </dl>
+    </p>
+    <p>
+      <b>Call by reference : </b>When a variable’s reference(address) and not
+      its value is passed to a function’s parameter, any changes made to the
+      parameter will update the original variable reference. This is known as
+      call by reference and this is true for all values having a non-primitive
+      data type.
+        <dl>
+            <dt>non-primitive data type </dt>
+            <dd>-Arrays</dd>
+            <dd>-Objects</dd>
+        </dl>
+    </p>
+  </body>
+  <script>
+    //call by value
+
+    /*   var myname = "sunny";
+    var mynewname = myname;
+    mynewname = "munny";
+    console.log(myname);
+    console.log(mynewname); */
+
+    //call by value using function
+    /* var myname = "sunny";
+    function showname(val){
+        val="munny";
+        return val
+    }
+    console.log(showname(myname));
+    console.log(myname); */
+
+    //call by reference
+    /* let person = { // using object
+        myname : "sunny",
+        age:28
+    }
+    let newperson={}
+    newperson=person;
+    newperson.myname="munny";
+    console.log(person);
+    console.log(newperson); */
+
+    //call by reference using function
+
+    let person = { 
+        myname : "sunny",
+        age:28
+    }
+    function showname(val) {
+        val.myname="munny"
+        return val;
+    }
+    console.log(showname(person));
+    console.log(person);
+  </script>
+</html>

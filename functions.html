@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+  </head>
+  <body>
+    <p>
+      Functions are the main “building blocks” of the program. They allow the
+      code to be called many times without repetition.
+    </p>
+    <p>types of Functions</p>
+    <ol>
+      <li>Named Function (Function Declration)</li>
+      <li>Anonymos Function (Function Expression)</li>
+    </ol>
+    <script>
+      //Named Function (Function Declration)
+      function abc() {
+        console.log("Function ABC");
+      }
+      abc(); // function calling
+      function square() {
+        console.log(5 * 5);
+      }
+      square();
+
+      function normalFunction() {
+        console.log("Normal Function");
+      }
+      normalFunction();
+
+      //Anonymos Function (Function Expression)
+      var testFunction = function () {
+        console.log("Function Expression");
+      };
+      testFunction();
+    </script>
+  </body>
+</html>

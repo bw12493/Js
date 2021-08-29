@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bubbling and capturing</title>
+  </head>
+  <body>
+    <p>evetn bubbling is origanrly true (start from targeted element to top)</p>
+    <p>
+      event capturign (event triking ) is True (start from the top elemet to the
+      target element)
+    </p>
+
+    <style>
+      .grandparent-wrapper {
+        height: 300px;
+        width: 300px;
+        background-color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .parent-wrapper {
+        height: 200px;
+        width: 200px;
+        background-color: green;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .child-wrapper {
+        height: 100px;
+        width: 100px;
+        background-color: orange;
+        /* margin-left: 30px; */
+      }
+    </style>
+
+    <div class="grandparent-wrapper">
+      <div class="parent-wrapper">
+        <div class="child-wrapper"></div>
+      </div>
+    </div>
+    <script>
+      /* document.querySelector(".grandparent-wrapper").addEventListener(
+        "click",
+        () => {
+          console.log("grandparent click");
+        },
+        true //capturing event
+      );
+
+      document.querySelector(".parent-wrapper").addEventListener(
+        "click",
+        () => {
+          console.log("parent click");
+        },
+        false //bubbling event
+      );
+
+      document.querySelector(".child-wrapper").addEventListener(
+        "click",
+        () => {
+          console.log("child click");
+        },
+        true //capturing event
+      ); */
+
+      //to stop propogation in bubbling
+      /* document.querySelector(".grandparent-wrapper").addEventListener(
+        "click",
+        () => {
+          console.log("grandparent click");
+        },
+        false
+      );
+
+      document.querySelector(".parent-wrapper").addEventListener(
+        "click",
+        (e) => {
+          console.log("parent click");
+        },
+        false
+      );
+
+      document.querySelector(".child-wrapper").addEventListener(
+        "click",
+        (e) => {
+          console.log("child click");
+          e.stopPropagation();
+        },
+        false
+      ); */
+
+      //to stop propogation in Capturing (triking event)
+      document.querySelector(".grandparent-wrapper").addEventListener(
+        "click",
+        (e) => {
+          console.log("grandparent click");
+          e.stopPropagation();
+        },
+        true
+      );
+
+      document.querySelector(".parent-wrapper").addEventListener(
+        "click",
+        (e) => {
+          console.log("parent click");
+        },
+        true
+      );
+
+      document.querySelector(".child-wrapper").addEventListener(
+        "click",
+        (e) => {
+          console.log("child click");
+        },
+        true
+      );
+    </script>
+  </body>
+</html>
