@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Apply Bind</title>
+</head>
+
+<body>
+    <h4>Call</h4>
+    <p>Call is a function that helps you change the context of the invoking function. In layperson's terms, it helps you replace the value of this inside a function with whatever value you want.</p>
+    <p>In call can pass Array, Object, String also</p>
+
+    <h4>Apply</h4>
+    <p>Apply is very similar to the call function. The only difference is that in apply you can pass an array as an
+        argument list.</p>
+    <p>In Apply can pass array only </p>
+
+    <h4>Bind</h4>
+    <p>Bind is a function that helps you create another function that you can execute later with the new context of this that is provided.</p>
+    <script>
+        let name = {
+            firstName: 'sunny',
+            lastName: 'wavhal',
+            age: 29,
+        }
+
+        //Call 
+        let fullDetails = function () {
+            console.log(this.firstName + " " + this.lastName + " " + this.age);
+        }
+        fullDetails.call(name);
+
+        // If we have more parameter in the function
+        let name2 = {
+            firstName: 'Pavan',
+            lastName: 'pawar',
+            age: 29,
+        }
+        let pfullDetails = function (homeTown) {
+            console.log(this.firstName + " " + this.lastName + " " + this.age + " From " + homeTown);
+        }
+        pfullDetails.call(name2, 'Junnar')
+
+        //Apply
+        function person(firstName, lastName) {
+            console.log('This is maually set by apply ', this);
+            console.log('Parameters ---', firstName, lastName);
+        }
+        person.apply(name, ['sunny', 'wavhal']);
+
+
+        var age = [20, 30, 40, 50, 60];
+        function calculateAge(a, b, c, d, e) {
+            console.log(a + b + c + d + e);
+        }
+        calculateAge.apply(null, age);
+
+        //Bind
+        function person(city, homeTown){  
+            console.log(this.firstName + ' ' + this.lastName + ' From ' + city + ' ' + homeTown);
+         }  
+         let bindPerson = person.bind(name, 'Junnar', 'Pune');  
+         bindPerson();
+    </script>
+</body>
+
+</html>
