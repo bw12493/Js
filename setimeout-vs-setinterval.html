@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setimeout-vs-setinterval</title>
+</head>
+
+<body>
+    <h4>SetTimeOut</h4>
+    <p>This method executes a function, after waiting a specified number of milliseconds. </p>
+    <p>We can even stop the execution of the setTimeout() function by using a method called as clearTimeout().</p>
+    <script>
+        function x() {
+            var i = 1;
+            setTimeout(function () {
+                console.log(i);
+            }, 2000)
+        }
+        x();
+
+        function b() {
+            setTimeout(function () {
+                console.log('sunny');
+            }, 3000)
+        }
+        b();
+
+        var a = setTimeout(mySet, 6000);
+        function mySet() {
+            console.log('bhagyesh');
+        }
+        mySet();
+    </script>
+
+    <h4>setInterval</h4>
+    <p>The setInterval() method repeats a given function at every given time interval. </p>
+    <p>Since the setInterval() method executes the function infinitely hence there is a method called as clearInterval() to stop the execution of the setInterval().</p>
+    <script>
+        var myVar = setInterval(myTimer, 1000);
+        function myTimer() {
+            console.log('12');
+        }
+        myTimer();
+        clearInterval(myVar);
+
+        counter = 0;
+        var inter = setInterval(() => {
+            counter++
+            if (counter === 10) {
+                clearInterval(inter);
+            }
+            console.log(counter);
+        }, 2000);
+    </script>
+</body>
+
+</html>

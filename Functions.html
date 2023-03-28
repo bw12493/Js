@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <h4>Function</h4>
+    <p>Function statement is getting hoisted but function Expression is not get hoisted is the difference between this.</p>
+    <script>
+        // Function Statement & Function Declaration are same
+        function x(){
+            console.log("X called");
+        }
+        x();
+
+        //Function expressions in JavaScript are not hoisted, unlike function declarations. (Difference in both)
+        // Function Expression
+        var b = function(){
+            console.log("B called");
+        }
+        b();
+
+        // Anonymous Function - Function without name 
+        // function (){
+
+        // }
+
+        // Name Function Expression
+        var a = function xyz(){
+            console.log("A called");
+        }
+        a();
+
+        // Difference between Parameter and Arguments
+            // Num1 and num2 are Parameters 
+            // 1 and 2 are Arguments
+        var c = function(num1, num2){
+           var num = num1 + num2;
+           return num;
+        }
+        console.log(c(1,2));
+
+        // First class functions
+            // Ability to used like values 
+        var s = function (param1){
+            return function aa(){
+
+            }
+        }
+        console.log(s());
+
+    </script>
+</body>
+</html>

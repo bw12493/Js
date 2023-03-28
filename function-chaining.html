@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function-chaining</title>
+</head>
+
+<body>
+    <h4>Function Chaining</h4>
+    <p>Function chaining is nothing but grouping functions in one single line using dot notation. This type of chaining makes the code very concise and also improves the performance</p>
+
+    <script>
+        var testObj = function () {
+            this.i = 0;
+
+            this.add = function (i) {
+                this.i += i;
+                return this;
+            }
+
+            this.substract = function (i) {
+                this.i -= i;
+                return this;
+            }
+
+            this.print = function (i) {
+                console.log(this.i);
+                return this;
+            }
+        }
+        var x = new testObj();
+
+        x.add(50).substract(20).print();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <p>
+        * Primitative :-
+
+        * string
+        * number
+        * Boolean
+        * Null
+        * Undefined
+
+
+        * Object :-
+
+        * array - An array is a special variable, which can hold more than one value
+        * function - A JavaScript function is a block of code designed to perform a particular task.
+        * Object - Object is collection key-value pair
+    </p>
+    <p>Object is collection key-value pair</p>
+    <p>object is a standalone entity, with properties and type</p>
+</body>
+</html>

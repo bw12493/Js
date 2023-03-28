@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immediately Invoked Function Expressions (IIFE)</title>
+</head>
+
+<body>
+    <h4>Immediately Invoked Function Expressions (IIFE)</h4>
+    <p>An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.
+    </p>
+    <p>We use for data privacy; Not for reusabilty t will reduce complexity of another code</p>
+    <script>
+        // Regular Function.
+        function Greet() {
+            console.log("Greet");
+        };
+        // Execution of Regular Function.
+        Greet();
+
+        // IIFE creation and execution.
+        (function () {
+            console.log("IIFE");
+        })();
+
+        (function(){
+            console.log('Sunny');
+        })();
+    </script>
+</body>
+
+</html>

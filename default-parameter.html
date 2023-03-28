@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Default Parameter</h4>
+    <p>If a function is called with missing arguments (less than declared), the missing values are set to undefined.</p>
+    <p>Sometimes this is acceptable, but sometimes it is better to assign a default value to the parameter</p>
+    <script>
+        function person(firstName, lastName, nationality='indian'){
+            this.firstName = firstName;
+            this.lastName=lastName;
+            this.nationality=nationality;
+            console.log(this);
+        }
+
+        testData = new person('sunny','wavhal'); // nationality is indian because we assign default value to the parameter if we not assign default value then values are set to undefine.
+        testData = new person('sunny','wavhal','uae');
+    </script>
+</body>
+</html>

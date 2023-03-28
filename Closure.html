@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+
+<body>
+    <h5>Closure</h5>
+    <p>A closure can be defined as a JavaScript feature in which the inner function has access to the outer function
+        variable.</p>
+    <p>Function bundled with its lexical environment(A lexical environment is a data structure that holds identifier-variable mapping) is known as a closure. Whenever function is returned, even if its vanished in execution context but still it remembers the reference it was pointing to.</p>
+    <script>
+        // outer function
+        function naam(name){
+            //inner function
+            //debugger;
+            function displayName(){
+                console.log("Hi"+" "+ name);
+            }
+            displayName();
+        }
+        naam("sunny");
+
+
+        function x(){
+            var i =1;
+            setTimeout(function(){
+                console.log(i);
+            },1000)
+        }
+        x();
+
+
+        function xa(){
+            var a=2;
+            function z(){
+                console.log(a);
+            }
+             z();
+        }
+        xa();
+    </script>
+</body>
+
+</html>

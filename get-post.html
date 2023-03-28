@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Get Post</title>
+</head>
+
+<body>
+    <h4>Get</h4>
+    <p>GET is used to request data from a specified resource.</p>
+
+    <button> Clik me</button>
+    <div id="rawdata"></div>
+
+    <script>
+        $(document).ready(() => {
+            var url = 'object-basic.txt';
+            $('button').on('click', () => {
+                $.get(url, (data, status) => {
+                    if (data) {
+                        $('#rawdata').html(data);
+                        alert(status);
+                    } else {
+                        alert('no data');
+                    }
+                })
+            })
+        }); 
+    </script>
+
+    <h4>Post</h4>
+    <p>POST is used to send data to a server to create/update a resource.</p>
+
+    <input type="text" name="name">
+    <p id="test"></p>
+
+    <script>
+        $(document).ready(() => {
+            $('input').on('keyup', () => {
+                var name = $('input').val();
+                var url = 'xzysmsm.php'
+                $.post(url, { data: name }, (data, status) => {
+                    if (data) {
+                        $('#rawdata').html(data);
+                        alert(status);
+                    } else {
+                        alert('no data');
+                    }
+                })
+            })
+        })   
+    </script>
+
+</body>
+
+</html>

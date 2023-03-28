@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Reduce Filter </title>
+</head>
+
+<body>
+    <h4>Map</h4>
+    <p>Map() method is used for creating a new array from an existing one, applying a function to each one of the
+        elements of the first array.
+    </p>
+
+    <h4>Filter</h4>
+    <p>The filter() method takes each element in an array and it applies a conditional statement against it. If this
+        conditional returns true, the element gets pushed to the output array. If the condition returns false, the
+        element does not get pushed to the output array.
+    </p>
+
+    <h4>Reduce</h4>
+    <p>The reduce() method reduces an array of values down to just one value. To get the output value, it runs a reducer
+        function on each element of the array.
+    </p>
+
+
+
+    <script>
+        const arr = [5, 1, 2, 3, 6]
+
+        function double(x) {
+            return x * 2;
+        }
+
+        function binary(x) {
+            return x.toString(2);
+        }
+
+        //Map()
+        const output = arr.map(double);
+        console.log(output);
+
+        const output1 = arr.map(binary);
+        console.log(output1);
+
+        //filter
+        function isEven(x) {
+            return x % 2 === 0;
+        }
+
+        function isOdd(x) {
+            return x % 2;
+        }
+
+        function greaterThan(x) {
+            return x > 4;
+        }
+
+
+        const output2 = arr.filter(isEven);
+        console.log(output2);
+
+        const output3 = arr.filter(isOdd);
+        console.log(output3);
+
+        const output4 = arr.filter(greaterThan);
+        console.log(output4);
+
+        // Using Arrow function 
+        const output5 = arr.filter((x) => x > 4);
+        console.log(output5);
+
+
+
+        // Reduce
+
+        function findSum(arr) {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum = sum + arr[i];
+            }
+            return sum;
+        }
+        console.log(findSum(arr));
+
+        acc = 0;
+        const output6 = arr.reduce(function (arr, curr) {
+            acc = acc + curr;
+            return acc;
+        }, 0);
+
+        console.log(output6);
+
+
+        const output7 = arr.reduce(function (max, curr) {
+            if (curr > max) {
+                max = curr;
+            }
+            return max;
+        }, 0);
+        console.log(output7);
+
+        var test = [1, 2, 3, 4, 5];
+        var data = test.reduce(function (p, n) {
+            return p + n;
+        })
+        console.log(data);
+
+
+        var datamap = test.map(function (a) {
+            return a * 2;
+        });
+        console.log(datamap);
+
+        var dataFilter = test.filter(function(a){
+            return a > 2;
+        })
+        console.log(dataFilter);
+    </script>
+</body>
+
+</html>

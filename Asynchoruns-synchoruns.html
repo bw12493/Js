@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchoruns</title>
+</head>
+<body>
+    <h4>Synchoruns</h4>
+    <p>Synchronous is a blocking architecture, so the execution of each operation is dependent on the completion of the one before it.</p>
+
+    <script>
+        let secondcall = ()=>{
+            console.log("second call")
+        }
+        //secondcall();
+
+        let firstcall = ()=>{
+            console.log('firstcall');
+            secondcall();
+            console.log('first ++');
+        }
+        firstcall();
+    </script>
+
+
+    <h4>Asynchronus </h4>
+    <p>Asynchronous is a non-blocking architecture, so the execution of one task isn't dependent on another. Tasks can run simultaneously. </p>
+    <p>It has callback so it will go through Event Loop (Response, Error is also callback)</p>
+    <script>
+        let thirdCall = ()=>{
+            setTimeout(()=>{
+                console.log('ThirdCall');
+            },2000)
+        }
+
+        let FourthCall = ()=>{
+            console.log('FourthCall');
+            thirdCall();
+            console.log('Fourth ++');
+        }
+        FourthCall();
+    </script>
+</body>
+</html>

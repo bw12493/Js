@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoistig</title>
+</head>
+
+<body>
+    <h4>Variable Declarations</h4>
+    <p>Hoisting is the default behaviour of JavaScript where all the variables and functions declarations are moved to
+        the top.<br>
+        JavaScript engine runs through our code in two phases — the Creation Phase and the Execution Phase. In the first
+        (Creation) phase, the engine goes through the code and allocates memory for the variables.
+        <br>
+        In the same phase, the variables declared via var are assigned the value undefined and that is why in the below
+        code snippet you will get the value of the variable firstname as undefined.
+    </p>
+    <p>In the case of the variables declared via let and const, they are also allocated memory but they are not assigned
+        the value undefined initially i.e. variable declarations do hoist but they throw an error till initialized</p>
+    <h5>To avoid hoisting in JavaScript, the strict mode can be used.</h5>
+    <script>
+
+        console.log(x);
+        var x = 1;
+        console.log(x);
+
+        // console.log(xy);
+        // let xy = 1;
+        // console.log(xy);
+
+        console.log(xyz);
+        const xyz = 1;
+        console.log(xyz);
+
+    </script>
+
+    <h4>Hoisting in Functions</h4>
+    <p>Hoisting in functions works the same way with the only notable exception that function declarations are hoisted
+        but not function expressions. </p>
+
+
+    <script>
+        hello();
+        // Function declaration
+        function hello() {
+            console.log("hello");
+        }
+        hello();
+
+        sayHello();
+        // Function expression
+        var sayHello = function () {
+            console.log("sayhello");
+        }
+        sayHello();
+
+    </script>
+
+
+    <script>
+        "use strict";
+        myFunction();
+
+        function myFunction() {
+            y = 3.14;   // This will cause an error (y is not defined)
+        }
+
+    </script>
+</body>
+
+</html>

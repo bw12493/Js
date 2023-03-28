@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+
+<body>
+    <h4>Arrow Function</h4>
+    <p>Arrow function in javascript is an alternative to regular function in Javascript. It allows you to create
+        functions in a cleaner way compared to regular functions. </p>
+
+    <h4>Why Arrow</h4>
+    <p>arrow function does not have its own this</p>
+    <p>it takes parents this as this</p>
+    <p>if function own this do not use fat arrow function - Like in Obj methods</p>
+    <script>
+        const numArray = [10, 20, 30, 40, 50, 60];
+
+        var resp = numArray.filter((numArray) => numArray > 20);
+        console.log(resp);
+
+        //ES5
+        let x = function () {
+            this.val = 1;
+            setTimeout(function () {
+                this.val++;
+                console.log(this.val);
+            }, 2000);
+        }
+        x();
+
+        //ES6
+        const z = function () {
+            this.val = 1;
+            setTimeout(() => {
+                this.val++;
+                console.log(this.val);
+            }, 2000)
+        }
+        z();
+    </script>
+</body>
+
+</html>

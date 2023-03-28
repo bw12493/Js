@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array-Methods</title>
+</head>
+
+<body>
+    <h4>Array-Methods</h4>
+
+    <p>The JavaScript method toString() converts an array to a string of (comma separated) array values.</p>
+    <p>The join() method also joins all array elements into a string. It behaves just like toString(), but in addition you can specify the separator. ('')('*')</p>
+    <p>The pop() method removes the last element from an array</p>
+    <p>The push() method adds a new element to an array (at the end)</p>
+    <p>The shift() method removes the first element of an array (and "shifts" the other elements to the left)</p>
+    <p>The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements</p>
+    <p>The concat() method creates a new array by merging (concatenating) existing arrays. The concat() method does not change the existing arrays. It always returns a new array.</p>
+    <p>The flat() method creates a new array with sub-array elements concatenated to a specified depth.</p>
+    <p>The find() method returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.</p>
+    <p>The findIndex() method returns the index of the first element in an array that satisfies the provided testing function. If no elements satisfy the testing function, -1 is returned.</p>
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(fruits.toString()); // tostring
+
+        console.log(fruits.join('')); console.log(fruits.join(' * ')); console.log(fruits.join(' / ')); // join
+
+        //console.log(fruits.pop()); console.log(fruits); // Pop - Remove from the end
+
+        console.log(fruits.push('kiwi')); console.log(fruits);// add from the end
+
+        console.log(fruits.shift()); console.log(fruits);// delete the first element from array. Then 2nd element comes in first place
+
+        console.log(fruits.unshift('lemon')); console.log(fruits); //add Element in first index make array inshift
+
+        const myGirls = ["Cecilie", "Lone"];
+        const myBoys = ["Emil", "Tobias", "Linus"];
+        const myChildren = myGirls.concat(myBoys); // concatenating array
+        console.log(myChildren);
+
+        const array1 = ["Cecilie", "Lone"];
+        const array2 = ["Emil", "Tobias", "Linus"];
+        const array3 = ["Robin", "Morgan"];
+
+        const myChildren1 = array1.concat(array2, array3); 
+        console.log(myChildren1);
+
+        const myArr = [[1,2],[3,4],[5,6]];
+        const newArr = myArr.flat(); // flat - Flattening an array is the process of reducing the dimensionality of an array.
+        console.log(newArr);
+
+        const array4 = [5, 12, 8, 130, 44];
+        const found = array4.find(element => element > 10); //returns the first element as condition
+        console.log(found); 
+
+        const isLargeNumber = (element) => element > 13; 
+        console.log(array4.findIndex(isLargeNumber)); // find method returns the element that satisfies the condition
+    </script>
+
+</body>
+
+</html>
